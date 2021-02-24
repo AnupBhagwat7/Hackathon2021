@@ -55,7 +55,7 @@ const dashboardRoutes = [
   },
   {
     path: "/table",
-    name: "Table List",
+    name: "Currency Scanner",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
@@ -63,7 +63,7 @@ const dashboardRoutes = [
   },
   {
     path: "/typography",
-    name: "Currency Scanner",
+    name: "Voice commands",
     rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
@@ -71,7 +71,7 @@ const dashboardRoutes = [
   },
   {
     path: "/icons",
-    name: "Icons",
+    name: "Handwring mode",
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
@@ -79,7 +79,7 @@ const dashboardRoutes = [
   },
   {
     path: "/maps",
-    name: "Maps",
+    name: "Text to speech converter",
     rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
@@ -87,7 +87,7 @@ const dashboardRoutes = [
   },
   {
     path: "/notifications",
-    name: "Notifications",
+    name: "Face Recognition",
     rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
