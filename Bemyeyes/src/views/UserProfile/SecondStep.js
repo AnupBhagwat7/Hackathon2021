@@ -7,6 +7,8 @@ import CardHeader from "components/Card/CardHeader"
 import CardBody from "components/Card/CardBody"
 import Webcam from "react-webcam"
 import { Fragment } from "react"
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 // Destructuring props
 const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, formErrors }) => {
@@ -29,10 +31,31 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
       [webcamRef]
     );
     
+    const axios = require('axios');
+
+    const verifyOtp = () => {
+  
+      console.log(otp);
+  
+      NotificationManager.success('OTP Verified successfully');
+
+      /* NotificationManager.error('Error in verifying aadhar OTP', 'Click me!', 5000, () => {
+        alert('callback');
+      }); */
+/*       axios.post('https:sample-endpoint.com/user', {
+        otp : otp    
+      })
+      .then(function (response) {
+        console.log(response);
+      })  */
+  
+    };
+
   return (
+    <div>
     <Fragment>
       <Grid container spacing={2} noValidate>
-      <Grid item xs={8} sm={6}>
+      <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
             label="OTP"
@@ -45,11 +68,16 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
             margin="normal"
             required
           />
-        </Grid>
+          <NotificationContainer/>
+          <Button variant="contained" color="default" onClick={verifyOtp} style={{ marginRight: 10 }}>
+          Verify
+        </Button>
+      </Grid>
 
+      <Grid>
         <Card>
           <CardHeader color="primary">
-            <h4>Capture Photo</h4>
+            <h5>Capture Photo</h5>
           </CardHeader>
           <CardBody>
             <Webcam
@@ -63,6 +91,7 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
             <button onClick={capture}>Capture</button>
           </CardBody>
         </Card>
+    </Grid>
 
       </Grid>
 
@@ -75,7 +104,10 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
           Next
         </Button>
       </div>
+      
     </Fragment>
+    
+    </div>
   )
 }
 
