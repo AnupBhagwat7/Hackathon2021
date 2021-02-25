@@ -146,13 +146,13 @@ export default function Notifications() {
       <CardBody>
         <Webcam
           audio={false}
-          height={600}
+          height={500}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
-          width={1200}
+          width={1000}
           videoConstraints={videoConstraints}
         />
-        <button onClick={capture}>Capture photo</button>
+        <button variant="contained" color="primary" onClick={capture}>Capture photo</button>
       </CardBody>
     </Card>
   );

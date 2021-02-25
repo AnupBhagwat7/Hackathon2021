@@ -17,10 +17,6 @@ const initialValues = {
   firstName: "",
   lastName: "",
   email: "",
-  gender: "",
-  date: "",
-  city: "",
-  states: "",
   phone: "",
   adhar: "",
   pan: "",
@@ -44,20 +40,6 @@ const fieldsValidation = {
     error: "",
     validate: "email"
   },
-  gender: {},
-  date: {},
-  city: {
-    error: "",
-    validate: "text",
-    minLength: 3,
-    maxLength: 20
-  },
-  states: {
-    error: "",
-    validate: "text",
-    minLength: 3,
-    maxLength: 20
-  },
   phone: {
     error: "",
     validate: "phone",
@@ -66,18 +48,20 @@ const fieldsValidation = {
   adhar: {
     error: "",
     validate: "adhar",
-    maxLength: 15
+    minLength: 12,
+    maxLength: 12
   },
   pan: {
     error: "",
     validate: "pan",
-    maxLength: 15
+    minLength: 10,
+    maxLength: 10
   },
   otp: {
     error: "",
     validate: "otp",
     minLength: 5,
-    maxLength: 15
+    maxLength: 5
   }
 }
 

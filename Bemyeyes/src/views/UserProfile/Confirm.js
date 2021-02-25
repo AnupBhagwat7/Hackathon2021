@@ -7,12 +7,26 @@ import Button from "@material-ui/core/Button"
 
 // Destructure props
 const Confirm = ({ handleNext, handleBack, values }) => {
-  const { firstName, lastName, email, gender, date, phone, city } = values
+  const { firstName, lastName, email, phone , adhar,pan } = values
 
   const handleSubmit = () => {
     // Do whatever with the values
-    console.log(values)
+    console.log(values);
     // Show last compinent or success message
+/*      const axios = require('axios')
+
+    axios.post('https:sample-endpoint.com/user', {
+      firstName: values.firstName,
+      lastName: values.lastName,
+      email: values.email,
+      phone:values.phone,
+      adhar: values.adhar,
+      pan: values.pan      
+    })
+    .then(function (response) {
+      console.log(response);
+    });  */
+
     handleNext()
   }
 
@@ -38,25 +52,19 @@ const Confirm = ({ handleNext, handleBack, values }) => {
         <Divider />
 
         <ListItem>
-          <ListItemText primary="Gender" secondary={gender} />
+          <ListItemText primary="Mobile" secondary={phone} />
+        </ListItem>
+ 
+        <Divider />
+
+         <ListItem>
+          <ListItemText primary="Aadhar number" secondary={adhar} />
         </ListItem>
 
         <Divider />
 
         <ListItem>
-          <ListItemText primary="Date of birth" secondary={date} />
-        </ListItem>
-
-        <Divider />
-
-        <ListItem>
-          <ListItemText primary="City" secondary={city} />
-        </ListItem>
-
-        <Divider />
-
-        <ListItem>
-          <ListItemText primary="phone" secondary={phone.length > 0 ? phone : "Not Provided"} />
+          <ListItemText primary="PAN number" secondary={pan} />
         </ListItem>
       </List>
 

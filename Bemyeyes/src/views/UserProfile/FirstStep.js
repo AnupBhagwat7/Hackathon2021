@@ -1,14 +1,10 @@
 import React, { Fragment } from "react"
 import Grid from "@material-ui/core/Grid"
 import TextField from "@material-ui/core/TextField"
-import FormControl from "@material-ui/core/FormControl"
-import Select from "@material-ui/core/Select"
-import InputLabel from "@material-ui/core/InputLabel"
-import MenuItem from "@material-ui/core/MenuItem"
 import Button from "@material-ui/core/Button"
 
 // Destructuring props
-const FirstStep = ({ handleNext, handleChange, values: { firstName, lastName, email, gender ,city, date, phone,states,adhar,pan }, formErrors }) => {
+const FirstStep = ({ handleNext, handleChange, values: { firstName, lastName, email, phone,adhar,pan }, formErrors }) => {
   // Check if all values are not empty or if there are some error
    const isValid = 
     firstName.length > 0 &&
@@ -17,8 +13,6 @@ const FirstStep = ({ handleNext, handleChange, values: { firstName, lastName, em
     !formErrors.lastName &&
     email.length > 0 &&
     !formErrors.email &&
-    //states.length > 0 &&
-    //!formErrors.states &&
     adhar.length > 0 &&
     !formErrors.adhar &&
     pan.length > 0 &&
@@ -71,58 +65,7 @@ const FirstStep = ({ handleNext, handleChange, values: { firstName, lastName, em
             required
           />
         </Grid>
-{/*        <Grid item xs={12} sm={6}>
-          <FormControl fullWidth required margin="normal">
-            <InputLabel>Gender</InputLabel>
-            <Select value={gender} onChange={handleChange} name="gender">
-              <MenuItem value={"Male"}>Male</MenuItem>
-              <MenuItem value={"Female"}>Female</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-         <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="City"
-            name="city"
-            placeholder="Enter your city"
-            value={city || ""}
-            margin="normal"
-            onChange={handleChange}
-            error={!!formErrors.city}
-            helperText={formErrors.city}
-            required
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="State"
-            name="states"
-            placeholder="Enter your state"
-            value={states || ""}
-            margin="normal"
-            onChange={handleChange}
-            error={!!formErrors.states}
-            helperText={formErrors.states}
-            required
-          />
-        </Grid> 
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            InputLabelProps={{
-              shrink: true
-            }}
-            label="Date of birth"
-            name="date"
-            type="date"
-            defaultValue={date || "1999-12-31"}
-            onChange={handleChange}
-            margin="normal"
-            required
-          />
-        </Grid>*/}
+
         <Grid item xs={12} sm={6}>
           <TextField
             fullWidth

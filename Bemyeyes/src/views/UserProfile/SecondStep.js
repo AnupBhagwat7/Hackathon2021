@@ -6,6 +6,7 @@ import { Card } from "@material-ui/core"
 import CardHeader from "components/Card/CardHeader"
 import CardBody from "components/Card/CardBody"
 import Webcam from "react-webcam"
+import { Fragment } from "react"
 
 // Destructuring props
 const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, formErrors }) => {
@@ -29,14 +30,14 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
     );
     
   return (
-    <>
-      <Grid container spacing={2}>
-      <Grid item xs={12} sm={6}>
+    <Fragment>
+      <Grid container spacing={2} noValidate>
+      <Grid item xs={8} sm={6}>
           <TextField
             fullWidth
             label="OTP"
             name="otp"
-            placeholder="xxxxx"
+            placeholder="Enter OTP"
             value={otp || ""}
             onChange={handleChange}
             error={!!formErrors.otp}
@@ -74,7 +75,7 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
           Next
         </Button>
       </div>
-    </>
+    </Fragment>
   )
 }
 
