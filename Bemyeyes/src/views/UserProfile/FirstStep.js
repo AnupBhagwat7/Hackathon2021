@@ -10,19 +10,19 @@ import Button from "@material-ui/core/Button"
 // Destructuring props
 const FirstStep = ({ handleNext, handleChange, values: { firstName, lastName, email, gender ,city, date, phone,states,adhar,pan }, formErrors }) => {
   // Check if all values are not empty or if there are some error
-   const isValid = true
-/*    firstName.length > 0 &&
+   const isValid = 
+    firstName.length > 0 &&
     !formErrors.firstName &&
     lastName.length > 0 &&
     !formErrors.lastName &&
     email.length > 0 &&
     !formErrors.email &&
-    states.length > 0 &&
-    !formErrors.states &&
+    //states.length > 0 &&
+    //!formErrors.states &&
     adhar.length > 0 &&
     !formErrors.adhar &&
     pan.length > 0 &&
-    !formErrors.pan */
+    !formErrors.pan 
 
   return (
     <Fragment>
@@ -71,7 +71,7 @@ const FirstStep = ({ handleNext, handleChange, values: { firstName, lastName, em
             required
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+{/*        <Grid item xs={12} sm={6}>
           <FormControl fullWidth required margin="normal">
             <InputLabel>Gender</InputLabel>
             <Select value={gender} onChange={handleChange} name="gender">
@@ -80,7 +80,7 @@ const FirstStep = ({ handleNext, handleChange, values: { firstName, lastName, em
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={12} sm={6}>
+         <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
             label="City"
@@ -107,7 +107,7 @@ const FirstStep = ({ handleNext, handleChange, values: { firstName, lastName, em
             helperText={formErrors.states}
             required
           />
-        </Grid>
+        </Grid> 
         <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
@@ -122,7 +122,7 @@ const FirstStep = ({ handleNext, handleChange, values: { firstName, lastName, em
             margin="normal"
             required
           />
-        </Grid>
+        </Grid>*/}
         <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
