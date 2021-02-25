@@ -11,48 +11,7 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { city, date
   return (
     <>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth
-            label="City"
-            name="city"
-            placeholder="Enter your city"
-            value={city || ""}
-            margin="normal"
-            onChange={handleChange}
-            error={!!formErrors.city}
-            helperText={formErrors.city}
-            required
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth
-            InputLabelProps={{
-              shrink: true
-            }}
-            label="Date of birth"
-            name="date"
-            type="date"
-            defaultValue={date || "1999-12-31"}
-            onChange={handleChange}
-            margin="normal"
-            required
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth
-            label="Phone number"
-            name="phone"
-            placeholder="i.e: xxx-xxx-xxxx"
-            value={phone || ""}
-            onChange={handleChange}
-            error={!!formErrors.phone}
-            helperText={formErrors.phone}
-            margin="normal"
-          />
-        </Grid>
+        
       </Grid>
       <div style={{ display: "flex", marginTop: 50, justifyContent: "flex-end" }}>
         <Button variant="contained" color="default" onClick={handleBack} style={{ marginRight: 10 }}>

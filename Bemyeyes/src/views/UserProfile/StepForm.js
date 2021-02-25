@@ -11,7 +11,7 @@ import Success from "./Success"
 import formValidation from "Helper/formValidation"
 
 // Step titles
-const labels = ["Personal Details", "KYC", "Confirmation"]
+const labels = ["Customer form", "Account Opening form", "Confirmation"]
 
 const initialValues = {
   firstName: "",
@@ -20,7 +20,10 @@ const initialValues = {
   gender: "",
   date: "",
   city: "",
-  phone: ""
+  states: "",
+  phone: "",
+  adhar: "",
+  pan: ""
 }
 
 const fieldsValidation = {
@@ -48,9 +51,25 @@ const fieldsValidation = {
     minLength: 3,
     maxLength: 20
   },
+  states: {
+    error: "",
+    validate: "text",
+    minLength: 3,
+    maxLength: 20
+  },
   phone: {
     error: "",
     validate: "phone",
+    maxLength: 15
+  },
+  adhar: {
+    error: "",
+    validate: "adhar",
+    maxLength: 15
+  },
+  pan: {
+    error: "",
+    validate: "pan",
     maxLength: 15
   }
 }
