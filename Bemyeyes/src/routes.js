@@ -70,6 +70,14 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
+    path: "/notifications",
+    name: "Face Recognition",
+    rtlName: "إخطارات",
+    icon: Notifications,
+    component: NotificationsPage,
+    layout: "/admin"
+  },
+  {
     path: "/icons",
     name: "Handwring mode",
     rtlName: "الرموز",
@@ -85,14 +93,7 @@ const dashboardRoutes = [
     component: Maps,
     layout: "/admin"
   },
-  {
-    path: "/notifications",
-    name: "Face Recognition",
-    rtlName: "إخطارات",
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: "/admin"
-  },
+  /*,
   {
     path: "/rtl-page",
     name: "RTL Support",
@@ -100,7 +101,7 @@ const dashboardRoutes = [
     icon: Language,
     component: RTLPage,
     layout: "/rtl"
-  }/* ,
+  } ,
   {
     path: "/upgrade-to-pro",
     name: "Upgrade To PRO",

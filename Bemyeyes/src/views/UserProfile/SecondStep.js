@@ -2,7 +2,7 @@ import React from "react"
 import Grid from "@material-ui/core/Grid"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
-import { Card } from "@material-ui/core"
+import { Card, Divider } from "@material-ui/core"
 import CardHeader from "components/Card/CardHeader"
 import CardBody from "components/Card/CardBody"
 import Webcam from "react-webcam"
@@ -21,18 +21,51 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
     facingMode: "user"
   };
   
+    const axios = require('axios');
     const webcamRef = React.useRef(null);
   
+    /* const projectId = 'hack-technoholics';
+    const location = 'us-central1';
+    const modelId = 'ICN88462857280159744';
+    // const filePath = 'path_to_local_file.jpg';
+
+    // Imports the Google Cloud AutoML library
+    const {PredictionServiceClient} = require('@google-cloud/automl').v1;
+    const fs = require('fs');
+
+    // Instantiates a client
+    const client = new PredictionServiceClient(); */
+
     const capture = React.useCallback(
       () => {
         const imageSrc = webcamRef.current.getScreenshot();
-        //console.log(imageSrc);
+        console.log(imageSrc);
+
+        // Construct request
+        // params is additional domain-specific parameters.
+        // score_threshold is used to filter the result
+        /* const request = {
+          name: client.modelPath(projectId, location, modelId),
+          payload: {
+            image: {
+              imageBytes: imageSrc,
+            },
+          },
+        };
+
+        const [response] = client.predict(request);
+
+        for (const annotationPayload of response.payload) {
+          console.log(`Predicted class name: ${annotationPayload.displayName}`);
+          console.log(
+            `Predicted class score: ${annotationPayload.classification.score}`
+          );
+          NotificationManager.success('Images Verified successfully');
+        } */
       },
       [webcamRef]
     );
     
-    const axios = require('axios');
-
     const verifyOtp = () => {
   
       console.log(otp);
@@ -73,7 +106,7 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
           Verify
         </Button>
       </Grid>
-
+      <Divider />
       <Grid>
         <Card>
           <CardHeader color="primary">
