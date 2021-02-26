@@ -1,4 +1,4 @@
-import React , { useState, useEffect } from "react";
+import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,94 +18,16 @@ import Search from "@material-ui/icons/Search";
 // core components
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
-import IconButton from '@material-ui/core/IconButton';
-import SettingsVoiceIcon from '@material-ui/icons/SettingsVoice';
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import MicNoneIcon from '@material-ui/icons/MicNone';
-import MicIcon from '@material-ui/icons/Mic';
-import SendIcon from '@material-ui/icons/Send';
 
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-const mic = new SpeechRecognition()
-
-mic.continuous = true
-mic.interimResults = true
-mic.lang = 'en-US'
 
 export default function AdminNavbarLinks() {
   const classes = useStyles();
   const [openNotification, setOpenNotification] = React.useState(null);
-  const [openVoiceControl, setOpenVoiceControl] = React.useState(null);
   const [openProfile, setOpenProfile] = React.useState(null);
-  const [isListening, setIsListening] = React.useState(false)
-  const [note, setNote] = React.useState(null)
-  const [savedNotes, setSavedNotes] = React.useState([])
-
-  useEffect(() => {
-    handleListen()
-  }, [isListening])
-
-  const handleListen = () => {
-    if (isListening) {
-      mic.start()
-      mic.onend = () => {
-        console.log('continue..')
-        mic.start()
-      }
-    } else {
-      mic.stop()
-      mic.onend = () => {
-        console.log('Stopped Mic on Click')
-      }
-    }
-    mic.onstart = () => {
-      console.log('Mics on')
-    }
-
-    mic.onresult = event => {
-      console.log(event)
-      const transcript = Array.from(event.results)
-        .map(result => result[0])
-        .map(result => result.transcript)
-        .join('')
-      console.log(transcript)
-      const key = transcript.toLowerCase()
-      // switch(transcript.toLowerCase()) {
-      //   case "dashboard" : window.location.href = "http://localhost:3002/admin/dashboard";
-      //                       break;
-      // }
-
-      if(transcript.includes("dashboard")) window.location.href = window.location.href.split("admin")[0]+"admin/dashboard";
-      else if(transcript.includes("form")) window.location.href = window.location.href.split("admin")[0]+"admin/user";
-      else if(transcript.includes("currency")) window.location.href = window.location.href.split("admin")[0]+"admin/table";
-      else if(transcript.includes("voice")) window.location.href = window.location.href.split("admin")[0]+"admin/typography";
-      else if(transcript.includes("handwriting")) window.location.href = window.location.href.split("admin")[0]+"admin/icons";
-      else if(transcript.includes("to speech")) window.location.href = window.location.href.split("admin")[0]+"admin/maps";
-      else if(transcript.includes("face")) window.location.href = window.location.href.split("admin")[0]+"admin/notifications";
-      else if(transcript.includes("rtl")) window.location.href = window.location.href.split("admin")[0]+"rtl/rtl-page";
-
-      mic.onerror = event => {
-        console.log(event.error)
-      }
-    }
-  }
-
-  const command = {
-    // "maps" : window.location.href = "http://localhost:3002/admin/maps"
-  }
-
-  const handleSaveNote = () => {
-
-    setSavedNotes([...savedNotes, note, command[note]])
-    setNote('')
-  }
-  // const navigateToCurrencyScanner = event => {
-  //   window.location.href = "http://localhost:3002/admin/maps"
-  // }
-    const handleClickNotification = event => {
+  const handleClickNotification = event => {
     if (openNotification && openNotification.contains(event.target)) {
       setOpenNotification(null);
     } else {
@@ -125,13 +47,6 @@ export default function AdminNavbarLinks() {
   const handleCloseProfile = () => {
     setOpenProfile(null);
   };
-
-  const handleVoiceControl = () => {
-  //   if(OpenVoiceControl) {
-  //     command[note];
-  //   }
-  };
-
   return (
     <div>
       <div className={classes.searchWrapper}>
@@ -156,27 +71,12 @@ export default function AdminNavbarLinks() {
         simple={!(window.innerWidth > 959)}
         aria-label="Dashboard"
         className={classes.buttonLink}
-        // onClick={navigateToCurrencyScanner}
       >
         <Dashboard className={classes.icons} />
         <Hidden mdUp implementation="css">
           <p className={classes.linkText}>Dashboard</p>
         </Hidden>
       </Button>
-      {isListening ? 
-            (
-              <IconButton color="primary" aria-label="upload picture" component="span" onClick={() => setIsListening(prevState => !prevState)}>
-                <MicIcon />
-              </IconButton>
-            // <button onClick={() => setIsListening(prevState => !prevState)}> Stop
-            // </button>
-
-             ) : (
-              <IconButton color="primary" aria-label="upload picture" component="span" onClick={() => setIsListening(prevState => !prevState)}>
-                <MicNoneIcon />
-              </IconButton>
-            //  <button onClick={() => setIsListening(prevState => !prevState)}> Start</button>
-             )}
       <div className={classes.manager}>
         <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
