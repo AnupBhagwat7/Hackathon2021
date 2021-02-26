@@ -20,7 +20,7 @@ const Success = () => {
         Thank you!
       </Typography>
       <Typography component="p" align="center" className={classes.title}>
-        You will get an email with further instructions
+        Acknowledgement No. - xxxXxx , You will get an email with further instructions.
       </Typography>
     </Box>
   )

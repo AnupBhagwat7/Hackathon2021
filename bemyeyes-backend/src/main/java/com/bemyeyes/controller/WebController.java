@@ -81,9 +81,9 @@ public class WebController {
 	String saveCustomer(@RequestBody String data) throws IOException {
 		logger.log(Level.INFO, "saving customer data");
 		
-		  Gson gson = new Gson(); Customer 
-		  cust = gson.fromJson(data, Customer.class);
-		 
+		Gson gson = new Gson();
+		Customer cust = gson.fromJson(data, Customer.class);
+
 		customerRepository.save(cust);
 		return "Customer data saved successfully\n";
 	}

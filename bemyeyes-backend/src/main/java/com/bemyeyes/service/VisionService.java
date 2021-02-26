@@ -1,7 +1,7 @@
 package com.bemyeyes.service;
 
-import com.google.cloud.automl.v1.*;
-import com.google.protobuf.ByteString;
+/*import com.google.cloud.automl.v1.*;
+import com.google.protobuf.ByteString;*/
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class VisionService {
     String location = "us-central1";
     String filePath = "path_to_local_file.jpg";
 
-    static void predict(String projectId, String modelId, String filePath) throws IOException {
+    /*static void predict(String projectId, String modelId, String filePath) throws IOException {
         // Initialize client that will be used to send requests. This client only needs to be created
         // once, and can be reused for multiple requests. After completing all of your requests, call
         // the "close" method on the client to safely clean up any remaining background resources.
@@ -42,5 +42,5 @@ public class VisionService {
                         "Predicted class score: %.2f\n", annotationPayload.getClassification().getScore());
             }
         }
-    }
+    }*/
 }

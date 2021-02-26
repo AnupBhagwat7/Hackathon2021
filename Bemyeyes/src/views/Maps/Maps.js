@@ -1,3 +1,4 @@
+import { Card, CardHeader } from "@material-ui/core";
 import React from "react";
 import {
   withScriptjs,
@@ -83,11 +84,6 @@ const CustomSkinMap = withScriptjs(
 
 export default function Maps() {
   return (
-    <CustomSkinMap
-      googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
-      loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `100vh` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-    />
+    <div/>
   );
 }

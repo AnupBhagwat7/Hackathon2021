@@ -20,7 +20,7 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
     height: 600,
     facingMode: "user"
   };
-  
+
     const axios = require('axios');
     const webcamRef = React.useRef(null);
   
@@ -121,7 +121,7 @@ const SecondStep = ({ handleNext, handleBack, handleChange, values: { otp }, for
               width={600}
               videoConstraints={videoConstraints}
             />
-            <button onClick={capture}>Capture</button>
+            <button onClick={capture}>Verify</button>
           </CardBody>
         </Card>
     </Grid>
