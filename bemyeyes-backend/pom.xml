@@ -13,12 +13,19 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bemyeyes-backend</name>
 	<description>Demo project for Spring Boot</description>
-	<properties>
+	
+   <properties>
 		<java.version>1.8</java.version>
 		<spring-cloud-gcp.version>2.0.0</spring-cloud-gcp.version>
 		<spring-cloud.version>2020.0.1</spring-cloud.version>
 	</properties>
+
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-gcp-starter-vision</artifactId>
+		</dependency>
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-automl</artifactId>
@@ -74,6 +81,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -93,7 +101,7 @@
 			
 		</dependencies>
 	</dependencyManagement>
-<repositories>
+    <repositories>
 		<!-- Use Spring Milestone Repository -->
 		<repository>
 			<id>repository.spring.milestone</id>
@@ -101,6 +109,7 @@
 			<url>http://repo.spring.io/milestone</url>
 		</repository>
 	</repositories>
+
 	<build>
 		<plugins>
 			<plugin>
