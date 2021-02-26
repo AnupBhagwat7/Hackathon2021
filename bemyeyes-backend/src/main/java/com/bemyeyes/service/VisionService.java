@@ -1,26 +1,19 @@
-package com.bemyeyes.util;
+package com.bemyeyes.service;
 
-import com.google.cloud.automl.v1.AnnotationPayload;
-import com.google.cloud.automl.v1.ExamplePayload;
-import com.google.cloud.automl.v1.Image;
-import com.google.cloud.automl.v1.ModelName;
-import com.google.cloud.automl.v1.PredictRequest;
-import com.google.cloud.automl.v1.PredictResponse;
-import com.google.cloud.automl.v1.PredictionServiceClient;
+import com.google.cloud.automl.v1.*;
 import com.google.protobuf.ByteString;
+import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-class VisionClassificationPredict {
+@Service
+public class VisionService {
 
-    //public static void main(String[] args) throws IOException {
-        // TODO(developer): Replace these variables before running the sample.
-        String projectId = "YOUR_PROJECT_ID";
-        String modelId = "YOUR_MODEL_ID";
-        String filePath = "path_to_local_file.jpg";
-        //predict(projectId, modelId, filePath);
-
+    String projectId = "YOUR_PROJECT_ID";
+    String modelId = "YOUR_MODEL_ID";
+    String filePath = "path_to_local_file.jpg";
 
     static void predict(String projectId, String modelId, String filePath) throws IOException {
         // Initialize client that will be used to send requests. This client only needs to be created
