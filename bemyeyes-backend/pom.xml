@@ -18,9 +18,7 @@
 		<spring-cloud-gcp.version>2.0.0</spring-cloud-gcp.version>
 		<spring-cloud.version>2020.0.1</spring-cloud.version>
 	</properties>
-
 	<dependencies>
-
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-automl</artifactId>
@@ -42,11 +40,11 @@
 			<artifactId>spring-cloud-gcp-starter</artifactId>
 		</dependency>
         <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
-			<version>1.0.0.M2</version>
-		</dependency>
-		<dependency>
+             <groupId>org.springframework.cloud</groupId>
+             <artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+             <version>1.2.4.RELEASE</version>
+        </dependency>		
+      <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
