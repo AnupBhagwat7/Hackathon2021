@@ -13,14 +13,18 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bemyeyes-backend</name>
 	<description>Demo project for Spring Boot</description>
-	<properties>
-		<java.version>1.8</java.version>
-		<spring-cloud-gcp.version>2.0.0</spring-cloud-gcp.version>
-		<spring-cloud.version>2020.0.1</spring-cloud.version>
-	</properties>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>1.1.1.RELEASE</spring-cloud.version>
+    </properties>
 
 	<dependencies>
 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-gcp-starter-vision</artifactId>
+		</dependency>
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-automl</artifactId>
@@ -64,24 +68,19 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.google.cloud</groupId>
-				<artifactId>spring-cloud-gcp-dependencies</artifactId>
-				<version>${spring-cloud-gcp.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-gcp-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
 	<build>
 		<plugins>
