@@ -13,19 +13,34 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bemyeyes-backend</name>
 	<description>Demo project for Spring Boot</description>
-
-    <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>1.1.1.RELEASE</spring-cloud.version>
-    </properties>
+	
+   <properties>
+		<java.version>1.8</java.version>
+		<spring-cloud-gcp.version>2.0.0</spring-cloud-gcp.version>
+		<spring-cloud.version>2020.0.1</spring-cloud.version>
+	</properties>
 
 	<dependencies>
-
+	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
+<<<<<<< HEAD
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-gcp-starter-vision</artifactId>
     </dependency>
         <dependency>
+=======
+			<groupId>com.google.cloud</groupId>
+			<artifactId>spring-cloud-gcp-starter</artifactId>
+		</dependency>
+	<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>google-cloud-vision</artifactId>
+		</dependency>        
+		<dependency>
+>>>>>>> 928b34ae529703b2595f698212f4b578d801e165
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-automl</artifactId>
         </dependency>
@@ -37,19 +52,19 @@
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-storage</artifactId>
         </dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.google.cloud</groupId>
-			<artifactId>spring-cloud-gcp-starter</artifactId>
-		</dependency>
+	
         <dependency>
+<<<<<<< HEAD
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
 		</dependency>
 		<dependency>
+=======
+             <groupId>org.springframework.cloud</groupId>
+             <artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+             </dependency>		
+      <dependency>
+>>>>>>> 928b34ae529703b2595f698212f4b578d801e165
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -81,14 +96,21 @@
 	</dependencies>
 
 	<dependencyManagement>
-		<dependencies>
-			<dependency>
+	<dependencies>
+			<!-- 	<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>
+			</dependency> -->
+			 <dependency>
+           <groupId>org.springframework.cloud</groupId>
+           <artifactId>spring-cloud-gcp-dependencies</artifactId>
+           <version>1.2.3.RELEASE</version>
+           <type>pom</type>
+           <scope>import</scope>
+       </dependency>
 			<dependency>
 				<groupId>com.google.cloud</groupId>
 				<artifactId>spring-cloud-gcp-dependencies</artifactId>
@@ -96,7 +118,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			
+			 
 		</dependencies>
 	</dependencyManagement>
     <repositories>
