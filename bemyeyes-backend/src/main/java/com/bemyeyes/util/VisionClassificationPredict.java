@@ -14,12 +14,17 @@ import java.nio.file.Paths;
 
 class VisionClassificationPredict {
 
-    //public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         // TODO(developer): Replace these variables before running the sample.
-        String projectId = "YOUR_PROJECT_ID";
-        String modelId = "YOUR_MODEL_ID";
+        String projectId = "hack-technoholics";
+        String modelId = "'ICN88462857280159744'";
+        String location = "us-central1";
         String filePath = "path_to_local_file.jpg";
-        //predict(projectId, modelId, filePath);
+
+        predict(projectId,modelId,filePath);
+
+    }
+
 
 
     static void predict(String projectId, String modelId, String filePath) throws IOException {

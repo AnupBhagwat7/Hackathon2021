@@ -11,8 +11,9 @@ import java.nio.file.Paths;
 @Service
 public class VisionService {
 
-    String projectId = "YOUR_PROJECT_ID";
-    String modelId = "YOUR_MODEL_ID";
+    String projectId = "hack-technoholics";
+    String modelId = "'ICN88462857280159744'";
+    String location = "us-central1";
     String filePath = "path_to_local_file.jpg";
 
     static void predict(String projectId, String modelId, String filePath) throws IOException {
